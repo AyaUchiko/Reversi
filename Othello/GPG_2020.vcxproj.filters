@@ -100,6 +100,9 @@
     <ClCompile Include="Task_Effect00.cpp">
       <Filter>Lib</Filter>
     </ClCompile>
+    <ClCompile Include="Task_GameBG.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameEngine_Ver3_83.h">
@@ -175,6 +178,9 @@
       <Filter>Game</Filter>
     </ClInclude>
     <ClInclude Include="resource.h" />
+    <ClInclude Include="Task_GameBG.h">
+      <Filter>Game</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GPG_2020.rc">

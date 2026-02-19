@@ -12,12 +12,14 @@ namespace  Title
 	//リソースの初期化
 	bool  Resource::Initialize()
 	{
+		this->img = DG::Image::Create("./data/image/Title.bmp");
 		return true;
 	}
 	//-------------------------------------------------------------------
 	//リソースの解放
 	bool  Resource::Finalize()
 	{
+		this->img.reset();
 		return true;
 	}
 	//-------------------------------------------------------------------
@@ -30,6 +32,7 @@ namespace  Title
 		this->res = Resource::Create();
 
 		//★データ初期化
+		this->logoPosY = -270;
 
 		//★タスクの生成
 
@@ -55,10 +58,21 @@ namespace  Title
 	{
 		auto inp = ge->in1->GetState();
 
+		this->logoPosY+=9;
+		if (this -> logoPosY >= 0)
+		{
+			this->logoPosY = 0;
+		}
 
-		if (inp.ST.down) {
-			//自身に消滅要請
-			this->Kill();
+		if (this->logoPosY == 0)
+		{
+			if (inp.ST.down)
+			{
+				if (inp.ST.down) {
+					//自身に消滅要請
+					this->Kill();
+				}
+			}
 		}
 	}
 	//-------------------------------------------------------------------

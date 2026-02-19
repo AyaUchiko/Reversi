@@ -3,6 +3,7 @@
 //-------------------------------------------------------------------
 #include  "MyPG.h"
 #include  "Task_Game.h"
+#include  "Task_GameBG.h"
 #include  "Task_Ending.h"
 
 namespace  Game
@@ -32,7 +33,7 @@ namespace  Game
 		//★データ初期化
 		
 		//★タスクの生成
-
+		auto bg = GameBG::Object::Create(true);
 		return  true;
 	}
 	//-------------------------------------------------------------------
