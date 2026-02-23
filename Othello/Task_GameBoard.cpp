@@ -1,16 +1,17 @@
 //-------------------------------------------------------------------
-//
+//盤面管理(判定、ルール管理)
 //-------------------------------------------------------------------
 #include  "MyPG.h"
-#include  "該当する.h"
+#include  "Task_GameBoard.h"
 
-namespace  「ネームスペース名」
+namespace Board
 {
 	Resource::WP  Resource::instance;
 	//-------------------------------------------------------------------
 	//リソースの初期化
 	bool  Resource::Initialize()
 	{
+		Board_Load();
 		return true;
 	}
 	//-------------------------------------------------------------------
@@ -29,7 +30,7 @@ namespace  「ネームスペース名」
 		this->res = Resource::Create();
 
 		//★データ初期化
-		
+
 		//★タスクの生成
 
 		return  true;
@@ -113,4 +114,28 @@ namespace  「ネームスペース名」
 	Resource::Resource() {}
 	//-------------------------------------------------------------------
 	Resource::~Resource() { this->Finalize(); }
+
+	//-------------------------------------------------------------------
+	bool Resource::Board_Load()
+	{
+		//ファイルパスを作る
+		string filePath = "./data/Resource/Board.txt";
+
+		//ファイルを開く
+		ifstream fin(filePath);
+
+		if (!fin) { return false; }//読み込み失敗
+
+		//配列にデータを取り込む
+		for (int y = 0; y < 8;++y)
+		{
+			for (int x = 0; x < 8;++x)
+			{
+				fin >> this->boardData[y][x];
+			}
+		}
+		//ファイルを閉じる
+		fin.close();
+		return true;
+	}
 }

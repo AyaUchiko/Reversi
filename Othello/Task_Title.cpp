@@ -4,6 +4,7 @@
 #include  "MyPG.h"
 #include  "Task_Title.h"
 #include  "Task_Game.h"
+#include  "Task_Input.h"
 
 namespace  Title
 {

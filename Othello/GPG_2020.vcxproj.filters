@@ -20,6 +20,15 @@
     <Filter Include="Game">
       <UniqueIdentifier>{094fb407-0bd6-444f-ba5e-99e9ea1195ec}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\Title">
+      <UniqueIdentifier>{015d84ba-e4ce-4e6e-bf93-eb87b62f0a3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Ending">
+      <UniqueIdentifier>{e8bd9a09-750f-446d-9d10-cae879c14656}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\MainGame">
+      <UniqueIdentifier>{25628e7d-20df-4e13-b3a1-3ccf19a5b171}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameEngine_Ver3_83.cpp">
@@ -76,15 +85,6 @@
     <ClCompile Include="WinMain.cpp">
       <Filter>MyPG</Filter>
     </ClCompile>
-    <ClCompile Include="Task_Game.cpp">
-      <Filter>Game</Filter>
-    </ClCompile>
-    <ClCompile Include="Task_Title.cpp">
-      <Filter>Game</Filter>
-    </ClCompile>
-    <ClCompile Include="Task_Ending.cpp">
-      <Filter>Game</Filter>
-    </ClCompile>
     <ClCompile Include="easing.cpp">
       <Filter>Lib</Filter>
     </ClCompile>
@@ -100,8 +100,26 @@
     <ClCompile Include="Task_Effect00.cpp">
       <Filter>Lib</Filter>
     </ClCompile>
+    <ClCompile Include="Task_Title.cpp">
+      <Filter>Game\Title</Filter>
+    </ClCompile>
+    <ClCompile Include="Task_Ending.cpp">
+      <Filter>Game\Ending</Filter>
+    </ClCompile>
     <ClCompile Include="Task_GameBG.cpp">
+      <Filter>Game\MainGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Task_Game.cpp">
+      <Filter>Game\MainGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Task_GameBoard.cpp">
+      <Filter>Game\MainGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Task_Input.cpp">
       <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Task_GameRender.cpp">
+      <Filter>Game\MainGame</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -168,18 +186,27 @@
     <ClInclude Include="Task_Effect00.h">
       <Filter>Lib</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Task_Title.h">
+      <Filter>Game\Title</Filter>
+    </ClInclude>
     <ClInclude Include="Task_Ending.h">
-      <Filter>Game</Filter>
+      <Filter>Game\Ending</Filter>
+    </ClInclude>
+    <ClInclude Include="Task_GameBG.h">
+      <Filter>Game\MainGame</Filter>
     </ClInclude>
     <ClInclude Include="Task_Game.h">
+      <Filter>Game\MainGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Task_GameBoard.h">
+      <Filter>Game\MainGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Task_Input.h">
       <Filter>Game</Filter>
     </ClInclude>
-    <ClInclude Include="Task_Title.h">
-      <Filter>Game</Filter>
-    </ClInclude>
-    <ClInclude Include="resource.h" />
-    <ClInclude Include="Task_GameBG.h">
-      <Filter>Game</Filter>
+    <ClInclude Include="Task_GameRender.h">
+      <Filter>Game\MainGame</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

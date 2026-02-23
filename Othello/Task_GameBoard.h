@@ -5,7 +5,7 @@
 //-------------------------------------------------------------------
 #include "GameEngine_Ver3_83.h"
 
-namespace GameBoard
+namespace Board
 {
 	//タスクに割り当てるグループ名と固有名
 	const  string  defGroupName("本編");	//グループ名
@@ -23,6 +23,8 @@ namespace GameBoard
 		static   WP  instance;
 		static  Resource::SP  Create();
 		//共有する変数はここに追加する
+		bool Board_Load();
+		int boardData[8][8];
 	};
 	//-------------------------------------------------------------------
 	class  Object : public  BTask

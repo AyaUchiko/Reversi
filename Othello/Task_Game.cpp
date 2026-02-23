@@ -5,6 +5,10 @@
 #include  "Task_Game.h"
 #include  "Task_GameBG.h"
 #include  "Task_Ending.h"
+#include  "Task_Input.h"
+#include  "Task_GameRender.h"
+#include  "Task_GameBoard.h"
+
 
 namespace  Game
 {
@@ -34,6 +38,9 @@ namespace  Game
 		
 		//šƒ^ƒXƒN‚Ì¶¬
 		auto bg = GameBG::Object::Create(true);
+		auto input = Input::Object::Create(true);
+		auto boa = Board::Object::Create(true);
+		auto ren = Render::Object::Create(true);
 		return  true;
 	}
 	//-------------------------------------------------------------------
