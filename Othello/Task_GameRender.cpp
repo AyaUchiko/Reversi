@@ -12,7 +12,7 @@ namespace  Render
 	//ƒŠƒ\[ƒX‚Ì‰Šú‰»
 	bool  Resource::Initialize()
 	{
-		imgKoma = DG::Image::Create("./data/image/Koma.png");
+		imgStone = DG::Image::Create("./data/image/Koma.png");
 		Board_Initialize();
 		return true;
 	}
@@ -136,9 +136,12 @@ namespace  Render
 		{
 			for (int x = 0; x < 8; x++)
 			{
-				ML::Box2D draw(280+(x * 90),y*90, 90, 90);
-				int stoneType = boardRes->boardData[y][x];
-				imgKoma->Draw(draw, chip[stoneType]);
+				float posX = boardRes->boardOffset.x + (x * 90.f);
+				float posY = boardRes->boardOffset.y + (y * 90.f);
+
+				ML::Box2D draw(posX,posY, 90, 90);
+				int stoneType = (int)boardRes->boardData[y][x];
+				imgStone->Draw(draw, chip[stoneType]);
 			}
 		}
 	}

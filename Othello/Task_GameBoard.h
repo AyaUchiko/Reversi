@@ -23,8 +23,14 @@ namespace Board
 		static   WP  instance;
 		static  Resource::SP  Create();
 		//‹¤—L‚·‚é•Ï”‚Í‚±‚±‚É’Ç‰Á‚·‚é
+		ML::Point boardOffset;
+		enum class Stone{ Non=0, Black=1, White=2 };
+		Stone boardData[8][8];
+		Stone turn;
+
 		bool Board_Load();
-		int boardData[8][8];
+		bool Board_Check(int x, int y, Stone turn);
+		bool Board_Put(int x, int y, Stone turn);
 	};
 	//-------------------------------------------------------------------
 	class  Object : public  BTask

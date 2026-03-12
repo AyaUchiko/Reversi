@@ -11,7 +11,7 @@ namespace  Input
 	//ƒŠƒ\[ƒX‚Ì‰Šú‰»
 	bool  Resource::Initialize()
 	{
-		mouse = XI::Mouse::Create(2,2);
+		mouse = XI::Mouse::Create();
 		return true;
 	}
 	//-------------------------------------------------------------------
@@ -64,12 +64,6 @@ namespace  Input
 	{
 
 		ge->Dbg_ToDisplay(50, 50, "X:%d Y:%d", res->posX, res->posY);
-
-		//ML::Box2D draw(0, 0, 64, 48);
-		//ML::Box2D src(0, 0, 64, 48);
-			
-		//draw.x = draw.x + res->posX;
-		//draw.y = draw.y + res->posY;
 	}
 
 	//šššššššššššššššššššššššššššššššššššššššššš

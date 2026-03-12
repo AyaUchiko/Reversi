@@ -23,8 +23,7 @@ namespace  Render
 		static   WP  instance;
 		static  Resource::SP  Create();
 		//‹¤—L‚·‚é•Ï”‚Í‚±‚±‚É’Ç‰Á‚·‚é
-		DG::Image::SP	imgKoma;
-
+		DG::Image::SP	imgStone;
 		ML::Box2D chip[3];
 
 		//ŠÖ”
