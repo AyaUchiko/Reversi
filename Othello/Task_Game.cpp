@@ -8,6 +8,7 @@
 #include  "Task_Input.h"
 #include  "Task_GameRender.h"
 #include  "Task_GameBoard.h"
+#include "Task_GameAI.h"
 
 
 namespace  Game
@@ -41,6 +42,7 @@ namespace  Game
 		auto input = Input::Object::Create(true);
 		auto boa = Board::Object::Create(true);
 		auto ren = Render::Object::Create(true);
+		auto ai = GameAI::Object::Create(true);
 		return  true;
 	}
 	//-------------------------------------------------------------------

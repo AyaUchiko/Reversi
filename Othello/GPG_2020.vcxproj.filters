@@ -121,6 +121,9 @@
     <ClCompile Include="Task_GameRender.cpp">
       <Filter>Game\MainGame</Filter>
     </ClCompile>
+    <ClCompile Include="Task_GameAI.cpp">
+      <Filter>Game\MainGame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameEngine_Ver3_83.h">
@@ -206,6 +209,9 @@
       <Filter>Game</Filter>
     </ClInclude>
     <ClInclude Include="Task_GameRender.h">
+      <Filter>Game\MainGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Task_GameAI.h">
       <Filter>Game\MainGame</Filter>
     </ClInclude>
   </ItemGroup>

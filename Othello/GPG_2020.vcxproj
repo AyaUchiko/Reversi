@@ -139,6 +139,7 @@
     <ClCompile Include="MyPG.cpp" />
     <ClCompile Include="randomLib.cpp" />
     <ClCompile Include="sound.cpp" />
+    <ClCompile Include="Task_GameAI.cpp" />
     <ClCompile Include="Task_GameBG.cpp" />
     <ClCompile Include="Task_Effect00.cpp" />
     <ClCompile Include="Task_Ending.cpp" />
@@ -171,6 +172,7 @@
     <ClInclude Include="randomLib.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="sound.h" />
+    <ClInclude Include="Task_GameAI.h" />
     <ClInclude Include="Task_GameBG.h" />
     <ClInclude Include="Task_Effect00.h" />
     <ClInclude Include="Task_Ending.h" />

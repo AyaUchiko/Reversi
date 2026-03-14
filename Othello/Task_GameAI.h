@@ -1,15 +1,15 @@
 #pragma warning(disable:4996)
 #pragma once
 //-------------------------------------------------------------------
-//
+//ゲームAI
 //-------------------------------------------------------------------
 #include "GameEngine_Ver3_83.h"
 
-namespace  「ネームスペース名」
+namespace  GameAI
 {
 	//タスクに割り当てるグループ名と固有名
-	const  string  defGroupName(		「グループ名」);	//グループ名
-	const  string  defName(				「タスク名」);	//タスク名
+	const  string  defGroupName("本編");	//グループ名
+	const  string  defName("AI");	//タスク名
 	//-------------------------------------------------------------------
 	class  Resource : public BResource
 	{
@@ -23,7 +23,6 @@ namespace  「ネームスペース名」
 		static   WP  instance;
 		static  Resource::SP  Create();
 		//共有する変数はここに追加する
-		「変数宣言を書く」
 	};
 	//-------------------------------------------------------------------
 	class  Object : public  BTask
@@ -47,7 +46,45 @@ namespace  「ネームスペース名」
 	//変更可◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇
 	public:
 		//追加したい変数・メソッドはここに追加する
-		「変数宣言を書く」
-		「追加メソッドを書く」
+		// -------------------------
+		// 練習用ミニマックス
+		// -------------------------
+		struct Move
+		{
+			int x, y;
+		};
+
+		bool aiTurn = false;
+		int searhDepth = 2;
+
+		Move bestMove = { -1, -1 };
+		int bestScore = 0;
+		int candidateCount = 0;
+
+		Board::Resource::Stone aiColor = Board::Resource::Stone::White;
+		Board::Resource::Stone playerColor = Board::Resource::Stone::Black;
+
+		Board::Resource::Stone Opponent(Board::Resource::Stone color);
+
+		vector<Move>GetMoves(Board::Resource::Stone board[8][8]);
+
+		void CopyBoard(
+			Board::Resource::Stone src [8][8],
+			Board::Resource::Stone dst[8][8]);
+
+		void ApplyMove(
+			Board::Resource::Stone src[8][8],
+			Move move,
+			Board::Resource::Stone color);
+
+		int Evaluate(Board::Resource::Stone board[8][8]);
+		int Minimax(Board::Resource::Stone board[8][8],
+			int depth,
+			Board::Resource::Stone turu,
+			bool maximizing);
+
+		Move FindBestMove(
+			Board::Resource::Stone board[8][8],
+			int depth);
 	};
 }
