@@ -4,12 +4,14 @@
 //ゲームAI
 //-------------------------------------------------------------------
 #include "GameEngine_Ver3_83.h"
+#include "Task_GameBoard.h"
+#include <vector>
 
 namespace  GameAI
 {
 	//タスクに割り当てるグループ名と固有名
 	const  string  defGroupName("本編");	//グループ名
-	const  string  defName("AI");	//タスク名
+	const  string  defName("AI");		//タスク名
 	//-------------------------------------------------------------------
 	class  Resource : public BResource
 	{
@@ -27,60 +29,80 @@ namespace  GameAI
 	//-------------------------------------------------------------------
 	class  Object : public  BTask
 	{
-	//変更不可◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆
 	public:
 		virtual  ~Object();
 		typedef  shared_ptr<Object>		SP;
 		typedef  weak_ptr<Object>		WP;
-		//生成窓口 引数はtrueでタスクシステムへ自動登録
 		static  Object::SP  Create(bool flagGameEnginePushBack_);
 		Resource::SP	res;
+
 	private:
 		Object();
 		bool  B_Initialize();
 		bool  B_Finalize();
-		bool  Initialize();	//「初期化」タスク生成時に１回だけ行う処理
-		void  UpDate()			override;//「実行」１フレーム毎に行う処理
-		void  Render2D_AF()		override;//「2D描画」１フレーム毎に行う処理
-		bool  Finalize();		//「終了」タスク消滅時に１回だけ行う処理
-	//変更可◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇
+		bool  Initialize();
+		void  UpDate()			override;
+		void  Render2D_AF()		override;
+		bool  Finalize();
+
 	public:
-		//追加したい変数・メソッドはここに追加する
-		// -------------------------
-		// 練習用ミニマックス
-		// -------------------------
+		//AIが駒を置くかを判断するための構造体
 		struct Move
 		{
 			int x, y;
 		};
-
+		//AIの手番かどうか
 		bool aiTurn = false;
-		int searhDepth = 2;
+		//Minimax法の探索深さ
+		int searchDepth = 4;
 
 		Move bestMove = { -1, -1 };
+		//Minimax法で見つかった最善手のスコア
 		int bestScore = 0;
+
+		//候補手の数
 		int candidateCount = 0;
 
+		//AIの色を白、プレイヤーの色を黒にする
 		Board::Resource::Stone aiColor = Board::Resource::Stone::White;
 		Board::Resource::Stone playerColor = Board::Resource::Stone::Black;
 
 		Board::Resource::Stone Opponent(Board::Resource::Stone color);
 
-		vector<Move>GetMoves(Board::Resource::Stone board[8][8]);
-
+		//盤面をコピーする
 		void CopyBoard(
-			Board::Resource::Stone src [8][8],
+			Board::Resource::Stone src[8][8],
 			Board::Resource::Stone dst[8][8]);
 
+		bool IsValidMove(
+			Board::Resource::Stone board[8][8],
+			int x, int y,
+			Board::Resource::Stone color);
+
+		bool PutStone(
+			Board::Resource::Stone board[8][8],
+			int x, int y,
+			Board::Resource::Stone color);
+
+		bool HasAnyMove(
+			Board::Resource::Stone board[8][8],
+			Board::Resource::Stone color);
+
+		vector<Move> GetMoves(
+			Board::Resource::Stone board[8][8],
+			Board::Resource::Stone color);
+
 		void ApplyMove(
-			Board::Resource::Stone src[8][8],
+			Board::Resource::Stone board[8][8],
 			Move move,
 			Board::Resource::Stone color);
 
 		int Evaluate(Board::Resource::Stone board[8][8]);
-		int Minimax(Board::Resource::Stone board[8][8],
+
+		int Minimax(
+			Board::Resource::Stone board[8][8],
 			int depth,
-			Board::Resource::Stone turu,
+			Board::Resource::Stone turn,
 			bool maximizing);
 
 		Move FindBestMove(
