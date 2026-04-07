@@ -51,8 +51,9 @@ namespace  GameAI
 		{
 			int x, y;
 		};
-		//AI‚Ìè”Ô‚©‚Ç‚¤‚©
-		bool aiTurn = false;
+		int waitTimer = 0;
+		bool isWaiting = false;
+
 		//Minimax–@‚Ì’Tõ[‚³
 		int searchDepth = 4;
 

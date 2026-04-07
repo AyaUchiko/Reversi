@@ -30,11 +30,13 @@ namespace  GameAI
 		__super::Initialize(defGroupName, defName, true);
 		this->res = Resource::Create();
 
-		aiTurn = false;
 		searchDepth = 4;
 		bestMove = { -1, -1 };
 		bestScore = 0;
 		candidateCount = 0;
+
+		waitTimer = 0;
+		isWaiting = false;
 
 		aiColor = Board::Resource::Stone::White;
 		playerColor = Board::Resource::Stone::Black;
@@ -469,24 +471,13 @@ namespace  GameAI
 	void  Object::UpDate()
 	{
 		auto boardRes = Board::Resource::Create();
-		auto inputRes = Input::Resource::Create();
-		auto ms = inputRes->mouse->GetState();
+		if (!boardRes) return;
 
-		//右クリックでAIを1手だけ動かす
-		if (ms.RB.down)
-		{
-			aiTurn = true;
-		}
-
-		if (!aiTurn)
-		{
-			return;
-		}
-
-		//白の手番でなければ何もしない
+		//白(AI)の手番でなければ待機状態をリセット
 		if (boardRes->turn != aiColor)
 		{
-			aiTurn = false;
+			waitTimer = 0;
+			isWaiting = false;
 			return;
 		}
 
@@ -500,10 +491,27 @@ namespace  GameAI
 			bestMove = { -1, -1 };
 			bestScore = 0;
 			candidateCount = 0;
-			aiTurn = false;
+			waitTimer = 0;
+			isWaiting = false;
 			return;
 		}
 
+		//白の手番になったら待機開始
+		if (!isWaiting)
+		{
+			isWaiting = true;
+			waitTimer = 60;
+			return;
+		}
+
+		// 1秒待つ
+		if (waitTimer > 0)
+		{
+			waitTimer--;
+			return;
+		}
+
+		//待ち終わったら着手
 		bestMove = FindBestMove(work, searchDepth);
 
 		if (bestMove.x >= 0 && bestMove.y >= 0)
@@ -514,13 +522,15 @@ namespace  GameAI
 			}
 		}
 
-		aiTurn = false;
+		//次のAIターンに備えてリセット
+		waitTimer = 0;
+		isWaiting = false;
 	}
 
 	//-------------------------------------------------------------------
 	void  Object::Render2D_AF()
 	{
-		ge->Dbg_ToDisplay(20, 20, "Right Click : AI move");
+		ge->Dbg_ToDisplay(20, 20, "AI Auto Move");
 		ge->Dbg_ToDisplay(20, 40, "depth : %d", searchDepth);
 		ge->Dbg_ToDisplay(20, 60, "candidate : %d", candidateCount);
 		ge->Dbg_ToDisplay(20, 80, "best score : %d", bestScore);

@@ -48,7 +48,6 @@ namespace  Title
 	//変更可◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇
 	public:
 		//追加したい変数・メソッドはここに追加する
-		int				logoPosY;		//タイトル画像スクロール用カウンタ
 		ML::Box2D		startButtonRect;
 
 		bool		isMouseOnButton;

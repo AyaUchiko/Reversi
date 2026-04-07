@@ -49,14 +49,43 @@ namespace  Game
 	//「終了」タスク消滅時に１回だけ行う処理
 	bool  Object::Finalize()
 	{
-		//★データ＆タスク解放
+		auto boardRes = Board::Resource::Create();
+
+		int blackCount = 0;
+		int whiteCount = 0;
+		string resultText = "";
+
+		if (boardRes)
+		{
+			blackCount = boardRes->CountStone(Board::Resource::Stone::Black);
+			whiteCount = boardRes->CountStone(Board::Resource::Stone::White);
+
+			if (blackCount > whiteCount)
+			{
+				resultText = "BLACK WIN";
+			}
+			else if (blackCount < whiteCount)
+			{
+				resultText = "WHITE WIN";
+			}
+			else
+			{
+				resultText = "DRAW";
+			}
+		}
+
 		ge->KillAll_G("本編");
 
 		if (!ge->QuitFlag() && this->nextTaskCreate) {
-			//★引き継ぎタスクの生成
 			auto next = Ending::Object::Create(true);
-		}
 
+			if (next && next->res)
+			{
+				next->res->blackCount = blackCount;
+				next->res->whiteCount = whiteCount;
+				next->res->resultText = resultText;
+			}
+		}
 		return  true;
 	}
 	//-------------------------------------------------------------------
@@ -69,31 +98,14 @@ namespace  Game
 		bool blackCanMove = boardRes->HasAnyMove(Board::Resource::Stone::Black);
 		bool whiteCanMove = boardRes->HasAnyMove(Board::Resource::Stone::White);
 
-		//両者置けないまたは盤面が埋まったら終局
+		// 両者置けない、または盤面が埋まったら終局
 		if ((!blackCanMove && !whiteCanMove) || boardRes->IsBoardFull())
 		{
-			auto endingRes = Ending::Resource::Create();
-			endingRes->blackCount = boardRes->CountStone(Board::Resource::Stone::Black);
-			endingRes->whiteCount = boardRes->CountStone(Board::Resource::Stone::White);
-
-			if (endingRes->blackCount > endingRes->whiteCount)
-			{
-				endingRes->resultText = "BLACK WIN";
-			}
-			else if (endingRes->blackCount < endingRes->whiteCount)
-			{
-				endingRes->resultText = "WHITE WIN";
-			}
-			else
-			{
-				endingRes->resultText = "DRAW";
-			}
-
 			this->Kill();
 			return;
 		}
 
-		//今の手番が置けないならパス
+		// 今の手番が置けないならパス
 		if (boardRes->turn == Board::Resource::Stone::Black)
 		{
 			if (!blackCanMove && whiteCanMove)

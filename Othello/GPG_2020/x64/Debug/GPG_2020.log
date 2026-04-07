@@ -1,8 +1,5 @@
-﻿  Task_Ending.cpp
-  Task_Game.cpp
-  Task_GameAI.cpp
+﻿  Task_GameAI.cpp
   Task_GameBG.cpp
-  Task_GameBoard.cpp
-  Task_GameRender.cpp
+  Task_Title.cpp
   コードを生成中...
   GPG_2020.vcxproj -> C:\C-Othello\Othello\x64\Debug\GPG_2020.exe

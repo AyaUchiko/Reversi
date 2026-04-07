@@ -23,7 +23,6 @@ namespace  Ending
 		static   WP  instance;
 		static  Resource::SP  Create();
 		//共有する変数はここに追加する
-		DG::Image::SP  img;
 		int blackCount;
 		int whiteCount;
 		string resultText;
@@ -50,6 +49,5 @@ namespace  Ending
 	//変更可◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇
 	public:
 		//追加したい変数・メソッドはここに追加する
-		int			logoPosY;		//タイトル画像スクロール用カウンタ
 	};
 }

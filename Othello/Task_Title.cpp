@@ -36,7 +36,6 @@ namespace  Title
 		auto input = Input::Object::Create(true);
 
 		//★データ初期化
-		this->logoPosY = 0;
 
 		//★タスクの生成
 		int buttonWidth = 260;

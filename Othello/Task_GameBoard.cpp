@@ -170,24 +170,19 @@ namespace Board
 	bool Resource::Board_Load()
 	{
 		int temp;
-		//ファイルパスを作る
 		string filePath = "./data/Resource/Board.txt";
-
-		//ファイルを開く
 		ifstream fin(filePath);
 
-		if (!fin) { return false; }//読み込み失敗
+		if (!fin) { return false; }
 
-		//配列にデータを取り込む
-		for (int y = 0; y < 8;++y)
+		for (int y = 0; y < 8; ++y)
 		{
-			for (int x = 0; x < 8;++x)
+			for (int x = 0; x < 8; ++x)
 			{
 				fin >> temp;
 				this->boardData[y][x] = (Stone)temp;
 			}
 		}
-		//ファイルを閉じる
 		fin.close();
 		return true;
 	}
