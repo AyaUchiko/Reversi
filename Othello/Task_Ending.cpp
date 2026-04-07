@@ -13,6 +13,9 @@ namespace  Ending
 	//リソースの初期化
 	bool  Resource::Initialize()
 	{
+		blackCount = 0;
+		whiteCount = 0;
+		resultText = "";
 		return true;
 	}
 	//-------------------------------------------------------------------
@@ -64,7 +67,11 @@ namespace  Ending
 	//「２Ｄ描画」１フレーム毎に行う処理
 	void  Object::Render2D_AF()
 	{
-		ge->Dbg_ToDisplay(100, 100, "エンド画面");
+		ge->Dbg_ToDisplay(100, 100, "RESULT");
+		ge->Dbg_ToDisplay(100, 140, "Black : %d", res->blackCount);
+		ge->Dbg_ToDisplay(100, 180, "White : %d", res->whiteCount);
+		ge->Dbg_ToDisplay(100, 220, "%s", res->resultText.c_str());
+		ge->Dbg_ToDisplay(100, 300, "Press ST to Title");
 	}
 
 	//★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★

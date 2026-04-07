@@ -3,6 +3,62 @@
   "WorkspaceRootPath": "C:\\C-Othello\\Othello\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|C:\\C-Othello\\Othello\\Task_Ending.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|solutionrelative:Task_Ending.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|C:\\C-Othello\\Othello\\Task_Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|solutionrelative:Task_Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|C:\\C-Othello\\Othello\\Task_Ending.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|solutionrelative:Task_Ending.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|C:\\C-Othello\\Othello\\Task_GameBoard.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|solutionrelative:Task_GameBoard.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|C:\\C-Othello\\Othello\\Task_GameBoard.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|solutionrelative:Task_GameBoard.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|C:\\C-Othello\\Othello\\Task_GameRender.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|solutionrelative:Task_GameRender.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|C:\\C-Othello\\Othello\\Task_Title.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|solutionrelative:Task_Title.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|C:\\C-Othello\\Othello\\Task_Title.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|solutionrelative:Task_Title.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|C:\\C-Othello\\Othello\\Task_Input.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|solutionrelative:Task_Input.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|C:\\C-Othello\\Othello\\Task_GameBG.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|solutionrelative:Task_GameBG.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|C:\\C-Othello\\Othello\\Task_GameBG.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|solutionrelative:Task_GameBG.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|C:\\C-Othello\\Othello\\Task_Input.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|solutionrelative:Task_Input.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|C:\\C-Othello\\Othello\\MyPG.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|solutionrelative:MyPG.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|C:\\C-Othello\\Othello\\Task_Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|solutionrelative:Task_Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|C:\\C-Othello\\Othello\\Task_GameAI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|solutionrelative:Task_GameAI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -11,52 +67,8 @@
       "RelativeMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|solutionrelative:Task_GameAI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|C:\\C-Othello\\Othello\\Task_GameBoard.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|solutionrelative:Task_GameBoard.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|C:\\C-Othello\\Othello\\Task_Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|solutionrelative:Task_Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|C:\\C-Othello\\Othello\\GameEngine_Ver3_83.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|solutionrelative:GameEngine_Ver3_83.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|C:\\C-Othello\\Othello\\Task_GameBG.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|solutionrelative:Task_GameBG.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|C:\\C-Othello\\Othello\\Task_GameBoard.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|solutionrelative:Task_GameBoard.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|C:\\C-Othello\\Othello\\Task_Input.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|solutionrelative:Task_Input.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|C:\\C-Othello\\Othello\\Task_Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|solutionrelative:Task_Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|C:\\C-Othello\\Othello\\Task_GameBG.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|solutionrelative:Task_GameBG.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|C:\\C-Othello\\Othello\\Task_Ending.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|solutionrelative:Task_Ending.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|C:\\C-Othello\\Othello\\Task_Ending.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|solutionrelative:Task_Ending.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|C:\\C-Othello\\Othello\\Task_Title.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|solutionrelative:Task_Title.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|C:\\C-Othello\\Othello\\Task_GameRender.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|solutionrelative:Task_GameRender.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|C:\\C-Othello\\Othello\\Task_GameRender.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -65,18 +77,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|C:\\C-Othello\\Othello\\MyPG.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|solutionrelative:MyPG.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|C:\\C-Othello\\Othello\\MyPG.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|solutionrelative:MyPG.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|C:\\C-Othello\\Othello\\Task_Input.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|solutionrelative:Task_Input.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|C:\\C-Othello\\Othello\\Task_Title.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{ED8F9DC2-C5EB-42BA-9AA7-38CBE44145EC}|GPG_2020.vcxproj|solutionrelative:Task_Title.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -86,7 +86,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
@@ -106,33 +106,176 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Task_GameAI.h",
-              "DocumentMoniker": "C:\\C-Othello\\Othello\\Task_GameAI.h",
-              "RelativeDocumentMoniker": "Task_GameAI.h",
-              "ToolTip": "C:\\C-Othello\\Othello\\Task_GameAI.h",
-              "RelativeToolTip": "Task_GameAI.h",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "Task_GameBoard.h",
+              "DocumentMoniker": "C:\\C-Othello\\Othello\\Task_GameBoard.h",
+              "RelativeDocumentMoniker": "Task_GameBoard.h",
+              "ToolTip": "C:\\C-Othello\\Othello\\Task_GameBoard.h",
+              "RelativeToolTip": "Task_GameBoard.h",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACYAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-03-12T09:21:33.307Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Task_GameAI.cpp",
-              "DocumentMoniker": "C:\\C-Othello\\Othello\\Task_GameAI.cpp",
-              "RelativeDocumentMoniker": "Task_GameAI.cpp",
-              "ToolTip": "C:\\C-Othello\\Othello\\Task_GameAI.cpp",
-              "RelativeToolTip": "Task_GameAI.cpp",
-              "ViewState": "AgIAAOMBAAAAAAAAAAAAANYBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-03-12T09:21:46.258Z",
+              "WhenOpened": "2026-02-19T05:51:34.521Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "Task_GameBoard.cpp",
+              "DocumentMoniker": "C:\\C-Othello\\Othello\\Task_GameBoard.cpp",
+              "RelativeDocumentMoniker": "Task_GameBoard.cpp",
+              "ToolTip": "C:\\C-Othello\\Othello\\Task_GameBoard.cpp",
+              "RelativeToolTip": "Task_GameBoard.cpp",
+              "ViewState": "AgIAAEQBAAAAAAAAAAAqwF0BAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-02-19T05:51:07.137Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Task_Input.cpp",
+              "DocumentMoniker": "C:\\C-Othello\\Othello\\Task_Input.cpp",
+              "RelativeDocumentMoniker": "Task_Input.cpp",
+              "ToolTip": "C:\\C-Othello\\Othello\\Task_Input.cpp",
+              "RelativeToolTip": "Task_Input.cpp",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAqwFgAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-02-19T07:27:29.284Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Task_GameRender.cpp",
+              "DocumentMoniker": "C:\\C-Othello\\Othello\\Task_GameRender.cpp",
+              "RelativeDocumentMoniker": "Task_GameRender.cpp",
+              "ToolTip": "C:\\C-Othello\\Othello\\Task_GameRender.cpp",
+              "RelativeToolTip": "Task_GameRender.cpp",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAJIAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-02-19T08:32:59.84Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Task_Title.h",
+              "DocumentMoniker": "C:\\C-Othello\\Othello\\Task_Title.h",
+              "RelativeDocumentMoniker": "Task_Title.h",
+              "ToolTip": "C:\\C-Othello\\Othello\\Task_Title.h",
+              "RelativeToolTip": "Task_Title.h",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACwAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-19T02:41:38.79Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Task_Title.cpp",
+              "DocumentMoniker": "C:\\C-Othello\\Othello\\Task_Title.cpp",
+              "RelativeDocumentMoniker": "Task_Title.cpp",
+              "ToolTip": "C:\\C-Othello\\Othello\\Task_Title.cpp",
+              "RelativeToolTip": "Task_Title.cpp",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAqwIsAAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-02-19T02:34:07.843Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Task_Ending.h",
+              "DocumentMoniker": "C:\\C-Othello\\Othello\\Task_Ending.h",
+              "RelativeDocumentMoniker": "Task_Ending.h",
+              "ToolTip": "C:\\C-Othello\\Othello\\Task_Ending.h*",
+              "RelativeToolTip": "Task_Ending.h*",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABwAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-18T04:40:05.68Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Task_Game.cpp",
+              "DocumentMoniker": "C:\\C-Othello\\Othello\\Task_Game.cpp",
+              "RelativeDocumentMoniker": "Task_Game.cpp",
+              "ToolTip": "C:\\C-Othello\\Othello\\Task_Game.cpp*",
+              "RelativeToolTip": "Task_Game.cpp*",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAqwG4AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-02-19T02:34:06.955Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Task_Ending.cpp",
+              "DocumentMoniker": "C:\\C-Othello\\Othello\\Task_Ending.cpp",
+              "RelativeDocumentMoniker": "Task_Ending.cpp",
+              "ToolTip": "C:\\C-Othello\\Othello\\Task_Ending.cpp*",
+              "RelativeToolTip": "Task_Ending.cpp*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-02-18T04:39:54.186Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Task_GameBG.cpp",
+              "DocumentMoniker": "C:\\C-Othello\\Othello\\Task_GameBG.cpp",
+              "RelativeDocumentMoniker": "Task_GameBG.cpp",
+              "ToolTip": "C:\\C-Othello\\Othello\\Task_GameBG.cpp",
+              "RelativeToolTip": "Task_GameBG.cpp",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAAAHcAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-02-19T03:06:42.207Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Task_GameBG.h",
+              "DocumentMoniker": "C:\\C-Othello\\Othello\\Task_GameBG.h",
+              "RelativeDocumentMoniker": "Task_GameBG.h",
+              "ToolTip": "C:\\C-Othello\\Othello\\Task_GameBG.h",
+              "RelativeToolTip": "Task_GameBG.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-19T03:06:59.895Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Task_Input.h",
+              "DocumentMoniker": "C:\\C-Othello\\Othello\\Task_Input.h",
+              "RelativeDocumentMoniker": "Task_Input.h",
+              "ToolTip": "C:\\C-Othello\\Othello\\Task_Input.h",
+              "RelativeToolTip": "Task_Input.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-19T07:27:52.886Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "MyPG.h",
+              "DocumentMoniker": "C:\\C-Othello\\Othello\\MyPG.h",
+              "RelativeDocumentMoniker": "MyPG.h",
+              "ToolTip": "C:\\C-Othello\\Othello\\MyPG.h",
+              "RelativeToolTip": "MyPG.h",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABoAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-19T07:38:30.914Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "Task_Game.h",
               "DocumentMoniker": "C:\\C-Othello\\Othello\\Task_Game.h",
               "RelativeDocumentMoniker": "Task_Game.h",
@@ -145,128 +288,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Task_GameBG.cpp",
-              "DocumentMoniker": "C:\\C-Othello\\Othello\\Task_GameBG.cpp",
-              "RelativeDocumentMoniker": "Task_GameBG.cpp",
-              "ToolTip": "C:\\C-Othello\\Othello\\Task_GameBG.cpp",
-              "RelativeToolTip": "Task_GameBG.cpp",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAAABoAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-02-19T03:06:42.207Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Task_GameBoard.h",
-              "DocumentMoniker": "C:\\C-Othello\\Othello\\Task_GameBoard.h",
-              "RelativeDocumentMoniker": "Task_GameBoard.h",
-              "ToolTip": "C:\\C-Othello\\Othello\\Task_GameBoard.h",
-              "RelativeToolTip": "Task_GameBoard.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAYAAAAAAAAAA==",
+              "DocumentIndex": 14,
+              "Title": "Task_GameAI.h",
+              "DocumentMoniker": "C:\\C-Othello\\Othello\\Task_GameAI.h",
+              "RelativeDocumentMoniker": "Task_GameAI.h",
+              "ToolTip": "C:\\C-Othello\\Othello\\Task_GameAI.h",
+              "RelativeToolTip": "Task_GameAI.h",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-19T05:51:34.521Z",
+              "WhenOpened": "2026-03-12T09:21:33.307Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Task_Ending.h",
-              "DocumentMoniker": "C:\\C-Othello\\Othello\\Task_Ending.h",
-              "RelativeDocumentMoniker": "Task_Ending.h",
-              "ToolTip": "C:\\C-Othello\\Othello\\Task_Ending.h",
-              "RelativeToolTip": "Task_Ending.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-18T04:40:05.68Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Task_Ending.cpp",
-              "DocumentMoniker": "C:\\C-Othello\\Othello\\Task_Ending.cpp",
-              "RelativeDocumentMoniker": "Task_Ending.cpp",
-              "ToolTip": "C:\\C-Othello\\Othello\\Task_Ending.cpp",
-              "RelativeToolTip": "Task_Ending.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAYAAAAAAAAAA==",
+              "DocumentIndex": 15,
+              "Title": "Task_GameAI.cpp",
+              "DocumentMoniker": "C:\\C-Othello\\Othello\\Task_GameAI.cpp",
+              "RelativeDocumentMoniker": "Task_GameAI.cpp",
+              "ToolTip": "C:\\C-Othello\\Othello\\Task_GameAI.cpp",
+              "RelativeToolTip": "Task_GameAI.cpp",
+              "ViewState": "AgIAAOMBAAAAAAAAAAAAANYBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-02-18T04:39:54.186Z"
+              "WhenOpened": "2026-03-12T09:21:46.258Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Task_GameBoard.cpp",
-              "DocumentMoniker": "C:\\C-Othello\\Othello\\Task_GameBoard.cpp",
-              "RelativeDocumentMoniker": "Task_GameBoard.cpp",
-              "ToolTip": "C:\\C-Othello\\Othello\\Task_GameBoard.cpp",
-              "RelativeToolTip": "Task_GameBoard.cpp",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAAADsAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-02-19T05:51:07.137Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Task_Input.cpp",
-              "DocumentMoniker": "C:\\C-Othello\\Othello\\Task_Input.cpp",
-              "RelativeDocumentMoniker": "Task_Input.cpp",
-              "ToolTip": "C:\\C-Othello\\Othello\\Task_Input.cpp",
-              "RelativeToolTip": "Task_Input.cpp",
-              "ViewState": "AgIAACYAAAAAAAAAAAASwCgAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-02-19T07:27:29.284Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Task_GameBG.h",
-              "DocumentMoniker": "C:\\C-Othello\\Othello\\Task_GameBG.h",
-              "RelativeDocumentMoniker": "Task_GameBG.h",
-              "ToolTip": "C:\\C-Othello\\Othello\\Task_GameBG.h",
-              "RelativeToolTip": "Task_GameBG.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-19T03:06:59.895Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Task_Game.cpp",
-              "DocumentMoniker": "C:\\C-Othello\\Othello\\Task_Game.cpp",
-              "RelativeDocumentMoniker": "Task_Game.cpp",
-              "ToolTip": "C:\\C-Othello\\Othello\\Task_Game.cpp",
-              "RelativeToolTip": "Task_Game.cpp",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAACwAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-02-19T02:34:06.955Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Task_Title.cpp",
-              "DocumentMoniker": "C:\\C-Othello\\Othello\\Task_Title.cpp",
-              "RelativeDocumentMoniker": "Task_Title.cpp",
-              "ToolTip": "C:\\C-Othello\\Othello\\Task_Title.cpp",
-              "RelativeToolTip": "Task_Title.cpp",
-              "ViewState": "AgIAADMAAAAAAAAAAAAAAAYAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-02-19T02:34:07.843Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Task_GameRender.cpp",
-              "DocumentMoniker": "C:\\C-Othello\\Othello\\Task_GameRender.cpp",
-              "RelativeDocumentMoniker": "Task_GameRender.cpp",
-              "ToolTip": "C:\\C-Othello\\Othello\\Task_GameRender.cpp",
-              "RelativeToolTip": "Task_GameRender.cpp",
-              "ViewState": "AgIAAH4AAAAAAAAAAAAAAJAAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-02-19T08:32:59.84Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "Task_GameRender.h",
               "DocumentMoniker": "C:\\C-Othello\\Othello\\Task_GameRender.h",
               "RelativeDocumentMoniker": "Task_GameRender.h",
@@ -278,7 +325,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "MyPG.cpp",
               "DocumentMoniker": "C:\\C-Othello\\Othello\\MyPG.cpp",
               "RelativeDocumentMoniker": "MyPG.cpp",
@@ -291,42 +338,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 16,
-              "Title": "MyPG.h",
-              "DocumentMoniker": "C:\\C-Othello\\Othello\\MyPG.h",
-              "RelativeDocumentMoniker": "MyPG.h",
-              "ToolTip": "C:\\C-Othello\\Othello\\MyPG.h",
-              "RelativeToolTip": "MyPG.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-19T07:38:30.914Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Task_Input.h",
-              "DocumentMoniker": "C:\\C-Othello\\Othello\\Task_Input.h",
-              "RelativeDocumentMoniker": "Task_Input.h",
-              "ToolTip": "C:\\C-Othello\\Othello\\Task_Input.h",
-              "RelativeToolTip": "Task_Input.h",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABoAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-19T07:27:52.886Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Task_Title.h",
-              "DocumentMoniker": "C:\\C-Othello\\Othello\\Task_Title.h",
-              "RelativeDocumentMoniker": "Task_Title.h",
-              "ToolTip": "C:\\C-Othello\\Othello\\Task_Title.h",
-              "RelativeToolTip": "Task_Title.h",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABkAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-19T02:41:38.79Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "GameEngine_Ver3_83.cpp",
               "DocumentMoniker": "C:\\C-Othello\\Othello\\GameEngine_Ver3_83.cpp",
               "RelativeDocumentMoniker": "GameEngine_Ver3_83.cpp",
@@ -334,8 +345,7 @@
               "RelativeToolTip": "GameEngine_Ver3_83.cpp",
               "ViewState": "AgIAACoAAAAAAAAAAAAMwEcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-02-19T07:32:00.617Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-19T07:32:00.617Z"
             }
           ]
         }

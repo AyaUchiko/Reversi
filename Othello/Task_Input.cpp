@@ -11,7 +11,7 @@ namespace  Input
 	//リソースの初期化
 	bool  Resource::Initialize()
 	{
-		mouse = XI::Mouse::Create();
+		mouse = ge->mouse;
 		return true;
 	}
 	//-------------------------------------------------------------------
@@ -33,8 +33,10 @@ namespace  Input
 		//★データ初期化
 		
 		//★タスクの生成
-		res->posX = 200;
-		res->posY = 150;
+		res->posX = 0;
+		res->posY = 0;
+		res->rawX = 0;
+		res->rawY = 0;
 		return  true;
 	}
 	//-------------------------------------------------------------------
@@ -54,9 +56,67 @@ namespace  Input
 	//「更新」１フレーム毎に行う処理
 	void  Object::UpDate()
 	{
-		auto ms = res->mouse->GetState();
-		res->posX = ms.pos.x;
-		res->posY = ms.pos.y;
+		// ボタン状態は既存の mouse から取得
+		auto mouseState = res->mouse->GetState();
+
+		// 実際のウィンドウ情報を取る
+		auto inputSystem = XI::Obj::GetInst();
+		if (!inputSystem) return;
+
+		HWND gameWindow = inputSystem->Wnd();
+
+		POINT cursorScreenPoint;
+		GetCursorPos(&cursorScreenPoint);
+
+		POINT cursorClientPoint = cursorScreenPoint;
+		ScreenToClient(gameWindow, &cursorClientPoint);
+
+		// raw = 補正前のクライアント座標
+		res->rawX = cursorClientPoint.x;
+		res->rawY = cursorClientPoint.y;
+
+		RECT clientRect;
+		GetClientRect(gameWindow, &clientRect);
+
+		int clientWidth = clientRect.right - clientRect.left;
+		int clientHeight = clientRect.bottom - clientRect.top;
+
+		if (clientWidth <= 0 || clientHeight <= 0)
+		{
+			return;
+		}
+
+		// 基準ゲーム画面の比率
+		float gameAspect = (float)ge->screenWidth / (float)ge->screenHeight;
+		float clientAspect = (float)clientWidth / (float)clientHeight;
+
+		// 実際にゲームが描画されている範囲
+		int viewX = 0;
+		int viewY = 0;
+		int viewWidth = clientWidth;
+		int viewHeight = clientHeight;
+
+		if (clientAspect > gameAspect)
+		{
+			// 横が余る → 左右に余白
+			viewHeight = clientHeight;
+			viewWidth = (int)(viewHeight * gameAspect);
+			viewX = (clientWidth - viewWidth) / 2;
+			viewY = 0;
+		}
+		else
+		{
+			// 縦が余る → 上下に余白
+			viewWidth = clientWidth;
+			viewHeight = (int)(viewWidth / gameAspect);
+			viewX = 0;
+			viewY = (clientHeight - viewHeight) / 2;
+		}
+
+		// pos = 補正後のゲーム内座標
+		// 余白分を引いてから、1280x720基準へ変換
+		res->posX = (res->rawX - viewX) * ge->screenWidth / viewWidth;
+		res->posY = (res->rawY - viewY) * ge->screenHeight / viewHeight;
 	}
 	//-------------------------------------------------------------------
 	//「２Ｄ描画」１フレーム毎に行う処理

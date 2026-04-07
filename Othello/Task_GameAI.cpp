@@ -328,7 +328,7 @@ namespace  GameAI
 			{
 				int add = 1;
 
-				// 角
+				//角
 				if ((x == 0 && y == 0) ||
 					(x == 7 && y == 0) ||
 					(x == 0 && y == 7) ||
@@ -336,7 +336,7 @@ namespace  GameAI
 				{
 					add = 30;
 				}
-				// 角の隣は少し危険
+				//角の隣は少し危険
 				else if (
 					(x == 1 && y == 0) || (x == 0 && y == 1) || (x == 1 && y == 1) ||
 					(x == 6 && y == 0) || (x == 7 && y == 1) || (x == 6 && y == 1) ||
@@ -345,7 +345,7 @@ namespace  GameAI
 				{
 					add = -8;
 				}
-				// 辺
+				//辺
 				else if (x == 0 || x == 7 || y == 0 || y == 7)
 				{
 					add = 5;
@@ -379,12 +379,12 @@ namespace  GameAI
 
 		vector<Move> moves = GetMoves(board, turn);
 
-		// 置ける手がない = パス
+		//置ける手がない=パス
 		if (moves.empty())
 		{
 			Board::Resource::Stone opp = Opponent(turn);
 
-			// 両者置けないなら終局扱い
+			//両者置けないなら終局扱い
 			if (!HasAnyMove(board, opp))
 			{
 				return Evaluate(board);
@@ -472,7 +472,7 @@ namespace  GameAI
 		auto inputRes = Input::Resource::Create();
 		auto ms = inputRes->mouse->GetState();
 
-		// 右クリックでAIを1手だけ動かす
+		//右クリックでAIを1手だけ動かす
 		if (ms.RB.down)
 		{
 			aiTurn = true;
@@ -483,7 +483,7 @@ namespace  GameAI
 			return;
 		}
 
-		// 白の手番でなければ何もしない
+		//白の手番でなければ何もしない
 		if (boardRes->turn != aiColor)
 		{
 			aiTurn = false;
@@ -493,7 +493,7 @@ namespace  GameAI
 		Board::Resource::Stone work[8][8];
 		CopyBoard(boardRes->boardData, work);
 
-		// AIが置けないならパス
+		//AIが置けないならパス
 		if (!HasAnyMove(work, aiColor))
 		{
 			boardRes->turn = playerColor;

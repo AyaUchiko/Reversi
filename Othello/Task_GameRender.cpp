@@ -136,10 +136,10 @@ namespace  Render
 		{
 			for (int x = 0; x < 8; x++)
 			{
-				float posX = boardRes->boardOffset.x + (x * 90.f);
-				float posY = boardRes->boardOffset.y + (y * 90.f);
+				int drawX = boardRes->boardOffset.x + (x * boardRes->cellSize);
+				int drawY = boardRes->boardOffset.y + (y * boardRes->cellSize);
 
-				ML::Box2D draw(posX,posY, 90, 90);
+				ML::Box2D draw(drawX, drawY, boardRes->cellSize, boardRes->cellSize);
 				int stoneType = (int)boardRes->boardData[y][x];
 				imgStone->Draw(draw, chip[stoneType]);
 			}

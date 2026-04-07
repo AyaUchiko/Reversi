@@ -24,6 +24,9 @@ namespace  Ending
 		static  Resource::SP  Create();
 		//‹¤—L‚·‚é•Ï”‚Í‚±‚±‚É’Ç‰Á‚·‚é
 		DG::Image::SP  img;
+		int blackCount;
+		int whiteCount;
+		string resultText;
 	};
 	//-------------------------------------------------------------------
 	class  Object : public  BTask

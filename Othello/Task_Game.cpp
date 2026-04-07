@@ -63,10 +63,50 @@ namespace  Game
 	//「更新」１フレーム毎に行う処理
 	void  Object::UpDate()
 	{
-		auto inp = ge->in1->GetState( );
-		if (inp.ST.down) {
-			//自身に消滅要請
+		auto boardRes = Board::Resource::Create();
+		if (!boardRes) return;
+
+		bool blackCanMove = boardRes->HasAnyMove(Board::Resource::Stone::Black);
+		bool whiteCanMove = boardRes->HasAnyMove(Board::Resource::Stone::White);
+
+		//両者置けないまたは盤面が埋まったら終局
+		if ((!blackCanMove && !whiteCanMove) || boardRes->IsBoardFull())
+		{
+			auto endingRes = Ending::Resource::Create();
+			endingRes->blackCount = boardRes->CountStone(Board::Resource::Stone::Black);
+			endingRes->whiteCount = boardRes->CountStone(Board::Resource::Stone::White);
+
+			if (endingRes->blackCount > endingRes->whiteCount)
+			{
+				endingRes->resultText = "BLACK WIN";
+			}
+			else if (endingRes->blackCount < endingRes->whiteCount)
+			{
+				endingRes->resultText = "WHITE WIN";
+			}
+			else
+			{
+				endingRes->resultText = "DRAW";
+			}
+
 			this->Kill();
+			return;
+		}
+
+		//今の手番が置けないならパス
+		if (boardRes->turn == Board::Resource::Stone::Black)
+		{
+			if (!blackCanMove && whiteCanMove)
+			{
+				boardRes->turn = Board::Resource::Stone::White;
+			}
+		}
+		else
+		{
+			if (!whiteCanMove && blackCanMove)
+			{
+				boardRes->turn = Board::Resource::Stone::Black;
+			}
 		}
 	}
 	//-------------------------------------------------------------------

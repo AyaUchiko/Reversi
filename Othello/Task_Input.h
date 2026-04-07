@@ -24,6 +24,7 @@ namespace  Input
 		static  Resource::SP  Create();
 		//共有する変数はここに追加する
 		XI::Mouse::SP	mouse;
+		int rawX, rawY;//補正前のマウス座標
 		int posX, posY;
 	};
 	//-------------------------------------------------------------------

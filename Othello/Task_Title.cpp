@@ -13,7 +13,8 @@ namespace  Title
 	//リソースの初期化
 	bool  Resource::Initialize()
 	{
-		this->img = DG::Image::Create("./data/image/Title.bmp");
+		this->img = DG::Image::Create("./data/image/Title.jpg");
+		this->buttonFillImg = DG::Image::Create("./data/effect/black.png");
 		return true;
 	}
 	//-------------------------------------------------------------------
@@ -21,6 +22,7 @@ namespace  Title
 	bool  Resource::Finalize()
 	{
 		this->img.reset();
+		this->buttonFillImg.reset();
 		return true;
 	}
 	//-------------------------------------------------------------------
@@ -31,12 +33,22 @@ namespace  Title
 		__super::Initialize(defGroupName, defName, true);
 		//リソースクラス生成orリソース共有
 		this->res = Resource::Create();
+		auto input = Input::Object::Create(true);
 
 		//★データ初期化
-		this->logoPosY = -270;
+		this->logoPosY = 0;
 
 		//★タスクの生成
+		int buttonWidth = 260;
+		int buttonHeight = 80;
+		int buttonX = (ge->screenWidth - buttonWidth) / 2;
+		int buttonY = ge->screenHeight - 160;
 
+		this->startButtonRect = ML::Box2D(buttonX, buttonY, buttonWidth, buttonHeight);
+
+		this->isMouseOnButton = false;
+		this->isStartingGame = false;
+		this->blinkTimer = 0;
 		return  true;
 	}
 	//-------------------------------------------------------------------
@@ -57,31 +69,130 @@ namespace  Title
 	//「更新」１フレーム毎に行う処理
 	void  Object::UpDate()
 	{
-		auto inp = ge->in1->GetState();
+		auto mouseState = ge->mouse->GetState();
 
-		this->logoPosY+=9;
-		if (this -> logoPosY >= 0)
+		auto inputSystem = XI::Obj::GetInst();
+		if (!inputSystem) return;
+
+		HWND gameWindow = inputSystem->Wnd();
+
+		POINT cursorScreenPoint;
+		GetCursorPos(&cursorScreenPoint);
+
+		POINT cursorClientPoint = cursorScreenPoint;
+		ScreenToClient(gameWindow, &cursorClientPoint);
+
+		int rawX = cursorClientPoint.x;
+		int rawY = cursorClientPoint.y;
+
+		RECT clientRect;
+		GetClientRect(gameWindow, &clientRect);
+
+		int clientWidth = clientRect.right - clientRect.left;
+		int clientHeight = clientRect.bottom - clientRect.top;
+
+		if (clientWidth <= 0 || clientHeight <= 0)
 		{
-			this->logoPosY = 0;
+			return;
 		}
 
-		if (this->logoPosY == 0)
+		float gameAspect = (float)ge->screenWidth / (float)ge->screenHeight;
+		float clientAspect = (float)clientWidth / (float)clientHeight;
+
+		int viewX = 0;
+		int viewY = 0;
+		int viewWidth = clientWidth;
+		int viewHeight = clientHeight;
+
+		if (clientAspect > gameAspect)
 		{
-			if (inp.ST.down)
+			viewHeight = clientHeight;
+			viewWidth = (int)(viewHeight * gameAspect);
+			viewX = (clientWidth - viewWidth) / 2;
+			viewY = 0;
+		}
+		else
+		{
+			viewWidth = clientWidth;
+			viewHeight = (int)(viewWidth / gameAspect);
+			viewX = 0;
+			viewY = (clientHeight - viewHeight) / 2;
+		}
+
+		int mouseX = (rawX - viewX) * ge->screenWidth / viewWidth;
+		int mouseY = (rawY - viewY) * ge->screenHeight / viewHeight;
+
+		ML::Point mousePoint = { mouseX, mouseY };
+
+		//ボタン上にマウスがあるか
+		this->isMouseOnButton = this->startButtonRect.Hit(mousePoint);
+
+		//点滅用タイマー
+		this->blinkTimer++;
+		if (this->blinkTimer >= 60)
+		{
+			this->blinkTimer = 0;
+		}
+
+		//すでに開始演出中なら暗転終了を待つ
+		if (this->isStartingGame)
+		{
+			if (ge->getCounterFlag("TitleFadeOut") == MyPG::MyGameEngine::COUNTER_FLAGS::LIMIT)
 			{
-				if (inp.ST.down) {
-					//自身に消滅要請
-					this->Kill();
-				}
+				this->Kill();
 			}
+			return;
+		}
+
+		//ボタン内クリックで暗転開始
+		if (mouseState.LB.down && this->isMouseOnButton)
+		{
+			this->isStartingGame = true;
+			ge->CreateEffect(99, ML::Vec2(0, 0));
+			ge->StartCounter("TitleFadeOut", 45);
+			return;
+		}
+
+		//STキーでも進める
+		auto inp = ge->in1->GetState();
+		if (inp.ST.down)
+		{
+			this->isStartingGame = true;
+			ge->CreateEffect(99, ML::Vec2(0, 0));
+			ge->StartCounter("TitleFadeOut", 45);
+			return;
 		}
 	}
 	//-------------------------------------------------------------------
 	//「２Ｄ描画」１フレーム毎に行う処理
 	void  Object::Render2D_AF()
 	{
-		ge->Dbg_ToDisplay(100, 100, "タイトル画面");
+		//背景
+		if (this->res->img)
+		{
+			ML::Box2D draw(0, 0, ge->screenWidth, ge->screenHeight);
+			ML::Box2D src(0, 0, 1920, 1080);
+			this->res->img->Draw(draw, src);
+		}
 
+		//マウスが乗っているときだけ点滅表示
+		bool showButton = true;
+		if (this->isMouseOnButton)
+		{
+			if (this->blinkTimer >= 30)
+			{
+				showButton = false;
+			}
+		}
+
+		if (showButton && this->res->buttonFillImg)
+		{
+			ML::Box2D src(0, 0, 256, 256);
+			this->res->buttonFillImg->Draw(this->startButtonRect,src,ML::Color(0.4f, 0.4f, 0.4f, 0.5f));
+		}
+
+		// ボタン文字
+		ge->Dbg_ToDisplay(this->startButtonRect.x + 85,this->startButtonRect.y + 28,"START");
 	}
 
 	//★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★

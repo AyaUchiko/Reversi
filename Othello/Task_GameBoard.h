@@ -22,8 +22,13 @@ namespace Board
 		typedef  weak_ptr<Resource>		WP;
 		static   WP  instance;
 		static  Resource::SP  Create();
+
 		//ã§óLÇ∑ÇÈïœêîÇÕÇ±Ç±Ç…í«â¡Ç∑ÇÈ
 		ML::Point boardOffset;
+		int cellSize;
+		int boardSize;
+		ML::Rect boardRect;
+
 		enum class Stone{ Non=0, Black=1, White=2 };
 		Stone boardData[8][8];
 		Stone turn;
@@ -31,6 +36,10 @@ namespace Board
 		bool Board_Load();
 		bool Board_Check(int x, int y, Stone turn);
 		bool Board_Put(int x, int y, Stone turn);
+		void UpdateBoardLayout();
+		bool HasAnyMove(Stone color);
+		int	 CountStone(Stone color);
+		bool IsBoardFull();
 	};
 	//-------------------------------------------------------------------
 	class  Object : public  BTask

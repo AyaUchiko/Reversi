@@ -3,6 +3,7 @@
 //-------------------------------------------------------------------
 #include  "MyPG.h"
 #include  "Task_GameBG.h"
+#include "Task_GameBoard.h"
 
 namespace  GameBG
 {
@@ -58,8 +59,11 @@ namespace  GameBG
 	//u‚Q‚c•`‰æv‚PƒtƒŒ[ƒ€–ˆ‚És‚¤ˆ—
 	void  Object::Render2D_AF()
 	{
-		//”wŒi•`‰æ
-		ML::Box2D draw(280, 0, 720,720);
+		auto boardRes = Board::Resource::Create();
+		if (!boardRes) return;
+
+		ML::Box2D draw(boardRes->boardOffset.x,boardRes->boardOffset.y,boardRes->boardSize,boardRes->boardSize);
+
 		ML::Box2D src(0, 0, 4135, 4135);
 		this->res->img->Draw(draw, src);
 	}

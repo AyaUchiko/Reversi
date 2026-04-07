@@ -9,11 +9,26 @@ namespace Board
 {
 	Resource::WP  Resource::instance;
 	//-------------------------------------------------------------------
-	//リソースの初期化
-	bool  Resource::Initialize()
+	// 盤面の位置とサイズを更新
+	void Resource::UpdateBoardLayout()
 	{
-		boardOffset.x = (1280 - 90 * 8) / 2;
-		boardOffset.y = (720 - 90 * 8) / 2;
+		cellSize = 90;
+		boardSize = cellSize * 8;
+
+		boardOffset.x = (ge->screenWidth - boardSize) / 2;
+		boardOffset.y = (ge->screenHeight - boardSize) / 2;
+
+		boardRect.left = boardOffset.x;
+		boardRect.top = boardOffset.y;
+		boardRect.right = boardOffset.x + boardSize;
+		boardRect.bottom = boardOffset.y + boardSize;
+	}
+
+	//-------------------------------------------------------------------
+	//リソースの初期化
+	bool Resource::Initialize()
+	{
+		UpdateBoardLayout();
 		Board_Load();
 		turn = Stone::Black;
 		return true;
@@ -56,24 +71,25 @@ namespace Board
 	//「更新」１フレーム毎に行う処理
 	void  Object::UpDate()
 	{
-		auto mou = Input::Resource::Create();
-		auto ms = mou->mouse->GetState();
-		if (ms.LB.down)
+		res->UpdateBoardLayout();
+
+		auto inputRes = Input::Resource::Create();
+		auto mouseState = inputRes->mouse->GetState();
+
+		if (mouseState.LB.down)
 		{
-			ML::Point mp = ms.pos;
+			ML::Point mousePoint = { inputRes->posX, inputRes->posY };
 
-			ML::Rect sb = 
-			{ 
-				res->boardOffset.x,res->boardOffset.y,
-				res->boardOffset.x + (90 * 8),
-				res->boardOffset.y + (90 * 8)
-			};
+			if (!(mousePoint.x >= res->boardRect.left &&mousePoint.x < res->boardRect.right &&
+				mousePoint.y >= res->boardRect.top &&mousePoint.y < res->boardRect.bottom))
+			{
+				return;
+			}
 
-			if (!(mp.x >= sb.left && mp.x < sb.right && mp.y >= sb.top && mp.y < sb.bottom)) return;
+			ML::Point localPoint ={mousePoint.x - res->boardRect.left,mousePoint.y - res->boardRect.top};
 
-			ML::Point mp2 = { mp.x - sb.left, mp.y - sb.top };
-			int x = mp2.x / 90;
-			int y = mp2.y / 90;
+			int x = localPoint.x / res->cellSize;
+			int y = localPoint.y / res->cellSize;
 
 			if (res->Board_Put(x, y, res->turn))
 			{
@@ -92,8 +108,8 @@ namespace Board
 	//「２Ｄ描画」１フレーム毎に行う処理
 	void  Object::Render2D_AF()
 	{
-	}
 
+	}
 	//★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 	//以下は基本的に変更不要なメソッド
 	//★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
@@ -286,6 +302,53 @@ namespace Board
 					boardData[fy][fx] = t;
 					fx += dx;
 					fy += dy;
+				}
+			}
+		}
+		return true;
+	}
+	//-------------------------------------------------------------------
+	bool Resource::HasAnyMove(Stone color)
+	{
+		for (int y = 0; y < 8; ++y)
+		{
+			for (int x = 0; x < 8; ++x)
+			{
+				if (Board_Check(x, y, color))
+				{
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	//-------------------------------------------------------------------
+	int Resource::CountStone(Stone color)
+	{
+		int count = 0;
+
+		for (int y = 0; y < 8; ++y)
+		{
+			for (int x = 0; x < 8; ++x)
+			{
+				if (boardData[y][x] == color)
+				{
+					count++;
+				}
+			}
+		}
+		return count;
+	}
+	//-------------------------------------------------------------------
+	bool Resource::IsBoardFull()
+	{
+		for (int y = 0; y < 8; ++y)
+		{
+			for (int x = 0; x < 8; ++x)
+			{
+				if (boardData[y][x] == Stone::Non)
+				{
+					return false;
 				}
 			}
 		}
