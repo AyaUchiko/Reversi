@@ -4,6 +4,7 @@
 #include  "MyPG.h"
 #include  "Task_GameBoard.h"
 #include  "Task_Input.h"
+#include "sound.h"
 
 namespace Board
 {
@@ -300,6 +301,7 @@ namespace Board
 				}
 			}
 		}
+		se::Play("put_se");
 		return true;
 	}
 	//-------------------------------------------------------------------

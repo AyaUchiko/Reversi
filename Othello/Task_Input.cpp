@@ -56,10 +56,7 @@ namespace  Input
 	//「更新」１フレーム毎に行う処理
 	void  Object::UpDate()
 	{
-		// ボタン状態は既存の mouse から取得
-		auto mouseState = res->mouse->GetState();
-
-		// 実際のウィンドウ情報を取る
+		//実際のウィンドウ情報を取る
 		auto inputSystem = XI::Obj::GetInst();
 		if (!inputSystem) return;
 
@@ -71,7 +68,7 @@ namespace  Input
 		POINT cursorClientPoint = cursorScreenPoint;
 		ScreenToClient(gameWindow, &cursorClientPoint);
 
-		// raw = 補正前のクライアント座標
+		//raw = 補正前のクライアント座標
 		res->rawX = cursorClientPoint.x;
 		res->rawY = cursorClientPoint.y;
 
@@ -86,11 +83,11 @@ namespace  Input
 			return;
 		}
 
-		// 基準ゲーム画面の比率
+		//基準ゲーム画面の比率
 		float gameAspect = (float)ge->screenWidth / (float)ge->screenHeight;
 		float clientAspect = (float)clientWidth / (float)clientHeight;
 
-		// 実際にゲームが描画されている範囲
+		//実際にゲームが描画されている範囲
 		int viewX = 0;
 		int viewY = 0;
 		int viewWidth = clientWidth;
@@ -98,7 +95,7 @@ namespace  Input
 
 		if (clientAspect > gameAspect)
 		{
-			// 横が余る → 左右に余白
+			//横が余る → 左右に余白
 			viewHeight = clientHeight;
 			viewWidth = (int)(viewHeight * gameAspect);
 			viewX = (clientWidth - viewWidth) / 2;
@@ -106,15 +103,15 @@ namespace  Input
 		}
 		else
 		{
-			// 縦が余る → 上下に余白
+			//縦が余る → 上下に余白
 			viewWidth = clientWidth;
 			viewHeight = (int)(viewWidth / gameAspect);
 			viewX = 0;
 			viewY = (clientHeight - viewHeight) / 2;
 		}
 
-		// pos = 補正後のゲーム内座標
-		// 余白分を引いてから、1280x720基準へ変換
+		//pos = 補正後のゲーム内座標
+		//余白分を引いてから、1280x720基準へ変換
 		res->posX = (res->rawX - viewX) * ge->screenWidth / viewWidth;
 		res->posY = (res->rawY - viewY) * ge->screenHeight / viewHeight;
 	}
@@ -122,8 +119,6 @@ namespace  Input
 	//「２Ｄ描画」１フレーム毎に行う処理
 	void  Object::Render2D_AF()
 	{
-
-		ge->Dbg_ToDisplay(50, 50, "X:%d Y:%d", res->posX, res->posY);
 	}
 
 	//★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★

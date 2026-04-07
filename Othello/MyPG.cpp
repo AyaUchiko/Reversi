@@ -449,6 +449,13 @@ ge->debugRect(me, DEBUGRECTMODE::RED ,- ge->camera2D.x, -ge->camera2D.y);
 			bgm::Init();
 			se::Init(wnd_);
 
+			//BGM
+			bgm::LoadFile("title_bgm", "./data/sound/ainoaisatu.mp3");
+			bgm::LoadFile("game_bgm", "./data/sound/lovedream.mp3");
+			bgm::LoadFile("ending_bgm", "./data/sound/ifudodo_Hr_solo_3roop.mp3");
+			//SE
+			se::LoadFile("put_se", "./data/sound/Koma.wav");
+
 		}
 		//ランダムライブラリ初期化
 		{

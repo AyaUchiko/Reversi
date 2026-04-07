@@ -25,6 +25,7 @@ namespace  Title
 		//‹¤—L‚·‚é•Ï”‚Í‚±‚±‚É’Ç‰Á‚·‚é
 		DG::Image::SP	img;
 		DG::Image::SP	buttonFillImg;
+		DG::Font::SP titleFont;
 	};
 	//-------------------------------------------------------------------
 	class  Object : public  BTask

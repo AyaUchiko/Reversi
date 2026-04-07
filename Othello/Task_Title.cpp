@@ -5,6 +5,7 @@
 #include  "Task_Title.h"
 #include  "Task_Game.h"
 #include  "Task_Input.h"
+#include "sound.h"
 
 namespace  Title
 {
@@ -13,6 +14,7 @@ namespace  Title
 	//リソースの初期化
 	bool  Resource::Initialize()
 	{
+		this->titleFont = DG::Font::Create("ＭＳ ゴシック", 16, 40);
 		this->img = DG::Image::Create("./data/image/Title.jpg");
 		this->buttonFillImg = DG::Image::Create("./data/effect/black.png");
 		return true;
@@ -23,6 +25,7 @@ namespace  Title
 	{
 		this->img.reset();
 		this->buttonFillImg.reset();
+		this->titleFont.reset();
 		return true;
 	}
 	//-------------------------------------------------------------------
@@ -48,6 +51,9 @@ namespace  Title
 		this->isMouseOnButton = false;
 		this->isStartingGame = false;
 		this->blinkTimer = 0;
+
+		bgm::AllStop();
+		bgm::Play("title_bgm");
 		return  true;
 	}
 	//-------------------------------------------------------------------
@@ -70,70 +76,19 @@ namespace  Title
 	{
 		auto mouseState = ge->mouse->GetState();
 
-		auto inputSystem = XI::Obj::GetInst();
-		if (!inputSystem) return;
+		auto inputRes = Input::Resource::Create();
+		if (!inputRes) return;
 
-		HWND gameWindow = inputSystem->Wnd();
+		ML::Point mousePoint = { inputRes->posX, inputRes->posY };
 
-		POINT cursorScreenPoint;
-		GetCursorPos(&cursorScreenPoint);
-
-		POINT cursorClientPoint = cursorScreenPoint;
-		ScreenToClient(gameWindow, &cursorClientPoint);
-
-		int rawX = cursorClientPoint.x;
-		int rawY = cursorClientPoint.y;
-
-		RECT clientRect;
-		GetClientRect(gameWindow, &clientRect);
-
-		int clientWidth = clientRect.right - clientRect.left;
-		int clientHeight = clientRect.bottom - clientRect.top;
-
-		if (clientWidth <= 0 || clientHeight <= 0)
-		{
-			return;
-		}
-
-		float gameAspect = (float)ge->screenWidth / (float)ge->screenHeight;
-		float clientAspect = (float)clientWidth / (float)clientHeight;
-
-		int viewX = 0;
-		int viewY = 0;
-		int viewWidth = clientWidth;
-		int viewHeight = clientHeight;
-
-		if (clientAspect > gameAspect)
-		{
-			viewHeight = clientHeight;
-			viewWidth = (int)(viewHeight * gameAspect);
-			viewX = (clientWidth - viewWidth) / 2;
-			viewY = 0;
-		}
-		else
-		{
-			viewWidth = clientWidth;
-			viewHeight = (int)(viewWidth / gameAspect);
-			viewX = 0;
-			viewY = (clientHeight - viewHeight) / 2;
-		}
-
-		int mouseX = (rawX - viewX) * ge->screenWidth / viewWidth;
-		int mouseY = (rawY - viewY) * ge->screenHeight / viewHeight;
-
-		ML::Point mousePoint = { mouseX, mouseY };
-
-		//ボタン上にマウスがあるか
 		this->isMouseOnButton = this->startButtonRect.Hit(mousePoint);
 
-		//点滅用タイマー
 		this->blinkTimer++;
 		if (this->blinkTimer >= 60)
 		{
 			this->blinkTimer = 0;
 		}
 
-		//すでに開始演出中なら暗転終了を待つ
 		if (this->isStartingGame)
 		{
 			if (ge->getCounterFlag("TitleFadeOut") == MyPG::MyGameEngine::COUNTER_FLAGS::LIMIT)
@@ -143,7 +98,6 @@ namespace  Title
 			return;
 		}
 
-		//ボタン内クリックで暗転開始
 		if (mouseState.LB.down && this->isMouseOnButton)
 		{
 			this->isStartingGame = true;
@@ -152,7 +106,6 @@ namespace  Title
 			return;
 		}
 
-		//STキーでも進める
 		auto inp = ge->in1->GetState();
 		if (inp.ST.down)
 		{
@@ -191,7 +144,10 @@ namespace  Title
 		}
 
 		// ボタン文字
-		ge->Dbg_ToDisplay(this->startButtonRect.x + 85,this->startButtonRect.y + 28,"START");
+		//ge->Dbg_ToDisplay(this->startButtonRect.x + 85,this->startButtonRect.y + 28,"START");
+
+		ML::Box2D draw(this->startButtonRect.x + 90, this->startButtonRect.y + 20, 220, 60);
+		this->res->titleFont->Draw(draw, "START", ML::Color(1, 1, 1, 1));
 	}
 
 	//★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★

@@ -9,6 +9,7 @@
 #include  "Task_GameRender.h"
 #include  "Task_GameBoard.h"
 #include "Task_GameAI.h"
+#include "sound.h"
 
 
 namespace  Game
@@ -43,6 +44,9 @@ namespace  Game
 		auto boa = Board::Object::Create(true);
 		auto ren = Render::Object::Create(true);
 		auto ai = GameAI::Object::Create(true);
+
+		bgm::AllStop();
+		bgm::Play("game_bgm");
 		return  true;
 	}
 	//-------------------------------------------------------------------
@@ -126,7 +130,7 @@ namespace  Game
 	void  Object::Render2D_AF()
 	{
 
-		ge->Dbg_ToDisplay(100, 100, "Game–{•Ò");
+		//ge->Dbg_ToDisplay(100, 100, "Game–{•Ò");
 	}
 
 	//šššššššššššššššššššššššššššššššššššššššššš

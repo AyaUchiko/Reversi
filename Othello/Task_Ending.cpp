@@ -5,6 +5,7 @@
 #include  "Task_Ending.h"
 #include  "Task_Title.h"
 #include  "Task_Input.h"
+#include "sound.h"
 
 namespace  Ending
 {
@@ -16,12 +17,14 @@ namespace  Ending
 		blackCount = 0;
 		whiteCount = 0;
 		resultText = "";
+		endingFont = DG::Font::Create("ＭＳ ゴシック", 16, 40);
 		return true;
 	}
 	//-------------------------------------------------------------------
 	//リソースの解放
 	bool  Resource::Finalize()
 	{
+		endingFont.reset();
 		return true;
 	}
 	//-------------------------------------------------------------------
@@ -35,7 +38,8 @@ namespace  Ending
 
 
 		//★タスクの生成
-
+		bgm::AllStop();
+		bgm::Play("ending_bgm");
 		return  true;
 	}
 	//-------------------------------------------------------------------
@@ -67,11 +71,24 @@ namespace  Ending
 	//「２Ｄ描画」１フレーム毎に行う処理
 	void  Object::Render2D_AF()
 	{
-		ge->Dbg_ToDisplay(100, 100, "RESULT");
-		ge->Dbg_ToDisplay(100, 140, "Black : %d", res->blackCount);
-		ge->Dbg_ToDisplay(100, 180, "White : %d", res->whiteCount);
-		ge->Dbg_ToDisplay(100, 220, "%s", res->resultText.c_str());
-		ge->Dbg_ToDisplay(100, 300, "Press ST to Title");
+		char buf[64];
+
+		ML::Box2D draw1(100, 100, 500, 60);
+		res->endingFont->Draw(draw1, "RESULT", ML::Color(1, 1, 1, 1));
+
+		sprintf(buf, "Black : %d", res->blackCount);
+		ML::Box2D draw2(100, 160, 500, 60);
+		res->endingFont->Draw(draw2, buf, ML::Color(1, 1, 1, 1));
+
+		sprintf(buf, "White : %d", res->whiteCount);
+		ML::Box2D draw3(100, 220, 500, 60);
+		res->endingFont->Draw(draw3, buf, ML::Color(1, 1, 1, 1));
+
+		ML::Box2D draw4(100, 280, 500, 60);
+		res->endingFont->Draw(draw4, res->resultText.c_str(), ML::Color(1, 1, 1, 1));
+
+		ML::Box2D draw5(100, 360, 700, 60);
+		res->endingFont->Draw(draw5, "Press S to Title", ML::Color(1, 1, 1, 1));
 	}
 
 	//★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★

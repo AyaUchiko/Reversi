@@ -26,6 +26,7 @@ namespace  Ending
 		int blackCount;
 		int whiteCount;
 		string resultText;
+		DG::Font::SP endingFont;
 	};
 	//-------------------------------------------------------------------
 	class  Object : public  BTask
