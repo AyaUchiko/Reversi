@@ -256,7 +256,7 @@ namespace  GameAI
 
 				int fx = x + dx;
 				int fy = y + dy;
-				while (!(fx == cx && fy == cy))
+				while (!(fx == cx && fy == cy))//相手の石を自分の石にひっくり返す
 				{
 					board[fy][fx] = color;
 					fx += dx;
@@ -395,7 +395,7 @@ namespace  GameAI
 			return Minimax(board, depth - 1, opp, !maximizing);
 		}
 
-		if (maximizing)
+		if (maximizing)//AIにとって得点をできるだけ大きくしたい番
 		{
 			int best = -1000000;
 
@@ -415,7 +415,7 @@ namespace  GameAI
 
 			return best;
 		}
-		else
+		else//プレイヤーにとって得点をできるだけ小さくしたい番
 		{
 			int best = 1000000;
 
