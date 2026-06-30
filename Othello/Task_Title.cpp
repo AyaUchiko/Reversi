@@ -5,7 +5,7 @@
 #include  "Task_Title.h"
 #include  "Task_Game.h"
 #include  "Task_Input.h"
-#include "sound.h"
+#include  "sound.h"
 
 namespace  Title
 {
@@ -14,9 +14,15 @@ namespace  Title
 	//リソースの初期化
 	bool  Resource::Initialize()
 	{
+		//タイトル文字表示用のフォントを作成
 		this->titleFont = DG::Font::Create("ＭＳ ゴシック", 16, 40);
-		this->img = DG::Image::Create("./data/image/Title.jpg");
+
+		//タイトル背景画像を読み込む
+		this->img = DG::Image::Create("./data/image/Title.png");
+
+		//スタートボタンの下に使う画像を読み込む
 		this->buttonFillImg = DG::Image::Create("./data/effect/black.png");
+
 		return true;
 	}
 	//-------------------------------------------------------------------
@@ -34,61 +40,68 @@ namespace  Title
 	{
 		//スーパークラス初期化
 		__super::Initialize(defGroupName, defName, true);
+
 		//リソースクラス生成orリソース共有
 		this->res = Resource::Create();
+
+		//マウス入力用のタスクを生成
 		auto input = Input::Object::Create(true);
 
-		//★データ初期化
-
-		//★タスクの生成
+		//ボタンの大きさと位置を決める
 		int buttonWidth = 260;
 		int buttonHeight = 80;
 		int buttonX = (ge->screenWidth - buttonWidth) / 2;
 		int buttonY = ge->screenHeight - 160;
 
+		//スタートボタンの当たり判定を作る
 		this->startButtonRect = ML::Box2D(buttonX, buttonY, buttonWidth, buttonHeight);
 
 		this->isMouseOnButton = false;
 		this->isStartingGame = false;
+
+		//スタートボタン点滅用タイマー
 		this->blinkTimer = 0;
 
+		//BGM関連
 		bgm::AllStop();
 		bgm::Play("title_bgm");
+
 		return  true;
 	}
 	//-------------------------------------------------------------------
 	//「終了」タスク消滅時に１回だけ行う処理
 	bool  Object::Finalize()
 	{
-		//★データ＆タスク解放
-
-
 		if (!ge->QuitFlag() && this->nextTaskCreate) {
 			//★引き継ぎタスクの生成
 			auto  nextTask = Game::Object::Create(true);
 		}
-
 		return  true;
 	}
 	//-------------------------------------------------------------------
 	//「更新」１フレーム毎に行う処理
 	void  Object::UpDate()
 	{
+		//現在のマウスボタン状態を取得
 		auto mouseState = ge->mouse->GetState();
 
+		//補正済みマウス座標を取得
 		auto inputRes = Input::Resource::Create();
 		if (!inputRes) return;
 
 		ML::Point mousePoint = { inputRes->posX, inputRes->posY };
 
+		//マウスがスタートボタンの上にあるかどうか判定
 		this->isMouseOnButton = this->startButtonRect.Hit(mousePoint);
 
+		//点滅処理
 		this->blinkTimer++;
 		if (this->blinkTimer >= 60)
 		{
 			this->blinkTimer = 0;
 		}
 
+		//フェード処理
 		if (this->isStartingGame)
 		{
 			if (ge->getCounterFlag("TitleFadeOut") == MyPG::MyGameEngine::COUNTER_FLAGS::LIMIT)
@@ -98,9 +111,11 @@ namespace  Title
 			return;
 		}
 
+		//左クリック、もしくはSキーでゲームスタート
 		if (mouseState.LB.down && this->isMouseOnButton)
 		{
 			this->isStartingGame = true;
+
 			ge->CreateEffect(99, ML::Vec2(0, 0));
 			ge->StartCounter("TitleFadeOut", 45);
 			return;
@@ -119,7 +134,7 @@ namespace  Title
 	//「２Ｄ描画」１フレーム毎に行う処理
 	void  Object::Render2D_AF()
 	{
-		//背景
+		//背景の表示
 		if (this->res->img)
 		{
 			ML::Box2D draw(0, 0, ge->screenWidth, ge->screenHeight);
@@ -143,9 +158,7 @@ namespace  Title
 			this->res->buttonFillImg->Draw(this->startButtonRect,src,ML::Color(0.4f, 0.4f, 0.4f, 0.5f));
 		}
 
-		// ボタン文字
-		//ge->Dbg_ToDisplay(this->startButtonRect.x + 85,this->startButtonRect.y + 28,"START");
-
+		//スタートボタンの文字を表示する
 		ML::Box2D draw(this->startButtonRect.x + 90, this->startButtonRect.y + 20, 220, 60);
 		this->res->titleFont->Draw(draw, "START", ML::Color(1, 1, 1, 1));
 	}

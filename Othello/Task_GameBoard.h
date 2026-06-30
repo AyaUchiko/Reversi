@@ -33,7 +33,7 @@ namespace Board
 		Stone boardData[8][8];
 		Stone turn;
 
-		bool Board_Load();
+		bool Board_Load(string filePath);
 		bool Board_Check(int x, int y, Stone turn);
 		bool Board_Put(int x, int y, Stone turn);
 		void UpdateBoardLayout();

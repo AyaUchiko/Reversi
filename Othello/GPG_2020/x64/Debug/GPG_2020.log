@@ -1,6 +1,2 @@
-﻿  Task_Ending.cpp
-  Task_Game.cpp
-  Task_GameBoard.cpp
-  コードを生成中...
-  LINK : 前回のインクリメンタル リンクで C:\C-Othello\Othello\x64\Debug\GPG_2020.exe が見つからなかったか、ビルドされませんでした。フル リンクを行います。
+﻿  Task_Game.cpp
   GPG_2020.vcxproj -> C:\C-Othello\Othello\x64\Debug\GPG_2020.exe

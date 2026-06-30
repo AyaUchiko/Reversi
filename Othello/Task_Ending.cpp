@@ -14,10 +14,16 @@ namespace  Ending
 	//リソースの初期化
 	bool  Resource::Initialize()
 	{
+		//駒数表示用の値を初期化
 		blackCount = 0;
 		whiteCount = 0;
+
+		//勝敗表示用の文字列を初期化
 		resultText = "";
+
+		//結果表示用のフォントを作成
 		endingFont = DG::Font::Create("ＭＳ ゴシック", 16, 40);
+
 		return true;
 	}
 	//-------------------------------------------------------------------
@@ -33,13 +39,18 @@ namespace  Ending
 	{
 		//スーパークラス初期化
 		__super::Initialize(defGroupName, defName, true);
+
 		//リソースクラス生成orリソース共有
 		this->res = Resource::Create();
 
 
 		//★タスクの生成
+		//他のBGMを止める
 		bgm::AllStop();
+
+		//エンディングBGMを再生する
 		bgm::Play("ending_bgm");
+
 		return  true;
 	}
 	//-------------------------------------------------------------------
@@ -71,22 +82,28 @@ namespace  Ending
 	//「２Ｄ描画」１フレーム毎に行う処理
 	void  Object::Render2D_AF()
 	{
+		//数値表示用の一時文字列
 		char buf[64];
 
+		//RESULTの見出しを表示
 		ML::Box2D draw1(100, 100, 500, 60);
 		res->endingFont->Draw(draw1, "RESULT", ML::Color(1, 1, 1, 1));
 
+		//黒の数を文字列にして表示
 		sprintf(buf, "Black : %d", res->blackCount);
 		ML::Box2D draw2(100, 160, 500, 60);
 		res->endingFont->Draw(draw2, buf, ML::Color(1, 1, 1, 1));
 
+		//白の数を文字列にして表示
 		sprintf(buf, "White : %d", res->whiteCount);
 		ML::Box2D draw3(100, 220, 500, 60);
 		res->endingFont->Draw(draw3, buf, ML::Color(1, 1, 1, 1));
 
+		//勝敗結果を表示
 		ML::Box2D draw4(100, 280, 500, 60);
 		res->endingFont->Draw(draw4, res->resultText.c_str(), ML::Color(1, 1, 1, 1));
 
+		//タイトルへ戻る操作説明を表示
 		ML::Box2D draw5(100, 360, 700, 60);
 		res->endingFont->Draw(draw5, "Press S to Title", ML::Color(1, 1, 1, 1));
 	}

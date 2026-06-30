@@ -55,7 +55,7 @@ namespace  GameAI
 		bool isWaiting = false;
 
 		//Minimax法の探索深さ
-		int searchDepth = 4;
+		int searchDepth = 0;
 
 		Move bestMove = { -1, -1 };
 		//Minimax法で見つかった最善手のスコア
@@ -64,7 +64,7 @@ namespace  GameAI
 		//候補手の数
 		int candidateCount = 0;
 
-		//AIの色を白、プレイヤーの色を黒にする
+		//AIの色を白、プレイヤーの色を黒
 		Board::Resource::Stone aiColor = Board::Resource::Stone::White;
 		Board::Resource::Stone playerColor = Board::Resource::Stone::Black;
 

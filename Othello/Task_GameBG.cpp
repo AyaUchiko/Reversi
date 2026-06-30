@@ -28,11 +28,13 @@ namespace  GameBG
 	{
 		//スーパークラス初期化
 		__super::Initialize(defGroupName, defName, true);
+
 		//リソースクラス生成orリソース共有
 		this->res = Resource::Create();
 
 		//★データ初期化
 		this->render2D_Priority[1] = 1.0f;
+
 		//★タスクの生成
 
 		return  true;
@@ -59,12 +61,17 @@ namespace  GameBG
 	//「２Ｄ描画」１フレーム毎に行う処理
 	void  Object::Render2D_AF()
 	{
+		//盤面情報を取得する
 		auto boardRes = Board::Resource::Create();
 		if (!boardRes) return;
 
+		//盤面の位置と大きさに合わせて背景の描画範囲を作る
 		ML::Box2D draw(boardRes->boardOffset.x,boardRes->boardOffset.y,boardRes->boardSize,boardRes->boardSize);
 
+		//元画像の使用範囲
 		ML::Box2D src(0, 0, 4135, 4135);
+
+		//盤面の下に背景画像を描画する
 		this->res->img->Draw(draw, src);
 	}
 

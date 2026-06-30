@@ -8,8 +8,8 @@
 #include  "Task_Input.h"
 #include  "Task_GameRender.h"
 #include  "Task_GameBoard.h"
-#include "Task_GameAI.h"
-#include "sound.h"
+#include  "Task_GameAI.h"
+#include  "sound.h"
 
 
 namespace  Game
@@ -33,18 +33,17 @@ namespace  Game
 	{
 		//スーパークラス初期化
 		__super::Initialize(defGroupName, defName, true);
+
 		//リソースクラス生成orリソース共有
 		this->res = Resource::Create();
-
-		//★データ初期化
 		
 		//★タスクの生成
 		auto bg = GameBG::Object::Create(true);
-		auto input = Input::Object::Create(true);
 		auto boa = Board::Object::Create(true);
 		auto ren = Render::Object::Create(true);
 		auto ai = GameAI::Object::Create(true);
 
+		//BGM関連
 		bgm::AllStop();
 		bgm::Play("game_bgm");
 		return  true;
@@ -53,17 +52,22 @@ namespace  Game
 	//「終了」タスク消滅時に１回だけ行う処理
 	bool  Object::Finalize()
 	{
+		//盤面のリソースを取得
 		auto boardRes = Board::Resource::Create();
 
+		//黒白の駒数と結果文字列を準備
 		int blackCount = 0;
 		int whiteCount = 0;
 		string resultText = "";
 
+		//盤面のリソースがあれば駒数を数えて勝敗を判定
 		if (boardRes)
 		{
+			//駒の数を数える
 			blackCount = boardRes->CountStone(Board::Resource::Stone::Black);
 			whiteCount = boardRes->CountStone(Board::Resource::Stone::White);
 
+			//駒の数を比較して勝敗を決める
 			if (blackCount > whiteCount)
 			{
 				resultText = "BLACK WIN";
@@ -80,9 +84,11 @@ namespace  Game
 
 		ge->KillAll_G("本編");
 
+		//次のタスクを生成する前に、ゲームエンジンが終了していないか確認
 		if (!ge->QuitFlag() && this->nextTaskCreate) {
 			auto next = Ending::Object::Create(true);
 
+			//エンディング側へ結果を渡す
 			if (next && next->res)
 			{
 				next->res->blackCount = blackCount;
@@ -96,9 +102,11 @@ namespace  Game
 	//「更新」１フレーム毎に行う処理
 	void  Object::UpDate()
 	{
+		//盤面のリソースを取得
 		auto boardRes = Board::Resource::Create();
 		if (!boardRes) return;
 
+		//駒を置ける場所があるか確認
 		bool blackCanMove = boardRes->HasAnyMove(Board::Resource::Stone::Black);
 		bool whiteCanMove = boardRes->HasAnyMove(Board::Resource::Stone::White);
 
@@ -129,8 +137,6 @@ namespace  Game
 	//「２Ｄ描画」１フレーム毎に行う処理
 	void  Object::Render2D_AF()
 	{
-
-		//ge->Dbg_ToDisplay(100, 100, "Game本編");
 	}
 
 	//★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★

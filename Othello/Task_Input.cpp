@@ -27,16 +27,19 @@ namespace  Input
 	{
 		//スーパークラス初期化
 		__super::Initialize(defGroupName, defName, true);
+
 		//リソースクラス生成orリソース共有
 		this->res = Resource::Create();
 
 		//★データ初期化
 		
 		//★タスクの生成
+		//マウス座標初期化
 		res->posX = 0;
 		res->posY = 0;
 		res->rawX = 0;
 		res->rawY = 0;
+
 		return  true;
 	}
 	//-------------------------------------------------------------------
@@ -56,25 +59,30 @@ namespace  Input
 	//「更新」１フレーム毎に行う処理
 	void  Object::UpDate()
 	{
-		//実際のウィンドウ情報を取る
+		//入力システム本体を取得
 		auto inputSystem = XI::Obj::GetInst();
 		if (!inputSystem) return;
 
+		//ゲームウィンドウのハンドルを取得
 		HWND gameWindow = inputSystem->Wnd();
 
+		//画面全体でのカーソル位置を取得
 		POINT cursorScreenPoint;
 		GetCursorPos(&cursorScreenPoint);
 
+		//取得した座標をウィンドウ内座標へ変換
 		POINT cursorClientPoint = cursorScreenPoint;
 		ScreenToClient(gameWindow, &cursorClientPoint);
 
-		//raw = 補正前のクライアント座標
+		//補正前のクライアント座標を保存
 		res->rawX = cursorClientPoint.x;
 		res->rawY = cursorClientPoint.y;
 
+		//現在のクライアント領域サイズを取得
 		RECT clientRect;
 		GetClientRect(gameWindow, &clientRect);
 
+		//ウィンドウ内の表示サイズを計算
 		int clientWidth = clientRect.right - clientRect.left;
 		int clientHeight = clientRect.bottom - clientRect.top;
 
@@ -83,35 +91,41 @@ namespace  Input
 			return;
 		}
 
-		//基準ゲーム画面の比率
+		//基準となるゲーム画面のアスペクト比
 		float gameAspect = (float)ge->screenWidth / (float)ge->screenHeight;
+
+		//実際のウィンドウのアスペクト比
 		float clientAspect = (float)clientWidth / (float)clientHeight;
 
-		//実際にゲームが描画されている範囲
+		//実際にゲームが描画されている範囲を初期化
 		int viewX = 0;
 		int viewY = 0;
 		int viewWidth = clientWidth;
 		int viewHeight = clientHeight;
 
+		//ウィンドウが横長なら左右に余白ができる
 		if (clientAspect > gameAspect)
 		{
-			//横が余る → 左右に余白
+			//高さを基準に描画範囲を決める
 			viewHeight = clientHeight;
 			viewWidth = (int)(viewHeight * gameAspect);
+
+			//左右の余白分だけXをずらす
 			viewX = (clientWidth - viewWidth) / 2;
 			viewY = 0;
 		}
+		//ウィンドウが縦長なら上下に余白ができる
 		else
 		{
-			//縦が余る → 上下に余白
+			//幅を基準に描画範囲を決める
 			viewWidth = clientWidth;
 			viewHeight = (int)(viewWidth / gameAspect);
+			//上下の余白分だけYをずらす
 			viewX = 0;
 			viewY = (clientHeight - viewHeight) / 2;
 		}
 
-		//pos = 補正後のゲーム内座標
-		//余白分を引いてから、1280x720基準へ変換
+		//余白を除いた位置をゲーム基準の解像度へ変換する
 		res->posX = (res->rawX - viewX) * ge->screenWidth / viewWidth;
 		res->posY = (res->rawY - viewY) * ge->screenHeight / viewHeight;
 	}
