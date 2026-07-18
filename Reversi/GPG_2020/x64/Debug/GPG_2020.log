@@ -1,0 +1,37 @@
+﻿  DG2014_DGObject.cpp
+  DG2014_Effect.cpp
+  DG2014_Font.cpp
+  DG2014_Image.cpp
+  DG2014_IndexBuffer.cpp
+  DG2014_InputLayout.cpp
+  DG2014_Mesh.cpp
+  DG2014_MeshSOBFile.cpp
+  DG2014_Texture.cpp
+  DG2014_Ver3_6.cpp
+  DG2014_VertexBuffer.cpp
+  DG2014_VertexContainer.cpp
+  Dm2008_Ver1_4.cpp
+  easing.cpp
+  fpscounter.cpp
+  GameEngine_Ver3_83.cpp
+C:\C++Reversi\Reversi\fpscounter.cpp(55,12): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\C++Reversi\Reversi\fpscounter.cpp(75,23): warning C4244: '=': 'DWORD' から 'float' への変換です。データが失われる可能性があります。
+  myLib.cpp
+  MyPG.cpp
+  randomLib.cpp
+  sound.cpp
+  コードを生成中...
+  コンパイル中...
+  Task_GameAI.cpp
+  Task_GameBG.cpp
+  Task_Effect00.cpp
+  Task_Ending.cpp
+  Task_Game.cpp
+  Task_GameBoard.cpp
+  Task_GameRender.cpp
+  Task_Input.cpp
+  Task_Title.cpp
+  WinMain.cpp
+  XI2018_Ver1_0.cpp
+  コードを生成中...
+  GPG_2020.vcxproj -> C:\C++Reversi\Reversi\x64\Debug\GPG_2020.exe
